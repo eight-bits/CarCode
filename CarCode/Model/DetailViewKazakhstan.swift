@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-// array Kazakhstan
+// array Kazakhstan...
 let arrayKz = [
     ["Астана", "01"],
     ["Алма-Ата", "02"],
@@ -30,30 +30,44 @@ let arrayKz = [
 // structure view Kazakhstan...
 struct DetailKazakhstanView: View {
     
+    // text filter...
     @State private var textSearch = ""
     
     var body: some View {
         VStack {
-            TextField("Enter code or region", text: $textSearch)
+            TextField("Enter code or name", text: $textSearch)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
             Spacer()
             List {
-                ForEach(arrayKz, id: \.self) { indexRow in
-                    HStack{
-                        Text(indexRow[0])
-                            .bold()
-                            .foregroundColor(Color.black)
-                            .multilineTextAlignment(.leading)
-                        Text(indexRow[1])
-                            .foregroundColor(Color(#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)))
-                            .multilineTextAlignment(.leading)
+                if !self.textSearch.isEmpty {
+                    ForEach(arrayKz.filter { $0[0].contains(textSearch) || $0[1].contains(textSearch)}, id: \.self) { indexRow in
+                        HStack{
+                            Text(indexRow[0])
+                                .bold()
+                                .foregroundColor(Color.black)
+                                .multilineTextAlignment(.leading)
+                            Text(indexRow[1])
+                                .foregroundColor(Color(#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)))
+                                .multilineTextAlignment(.leading)
+                        }
+                    }
+                } else {
+                    ForEach(arrayKz, id: \.self) { indexRow in
+                        HStack{
+                            Text(indexRow[0])
+                                .bold()
+                                .foregroundColor(Color.black)
+                                .multilineTextAlignment(.leading)
+                            Text(indexRow[1])
+                                .foregroundColor(Color(#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)))
+                                .multilineTextAlignment(.leading)
+                        }
                     }
                 }
-                .navigationBarTitle("Kazakhstan", displayMode: .large)
-                
-                .listRowBackground(Color.white)
             }
+            .navigationBarTitle("Kazakhstan", displayMode: .large)
+            .listRowBackground(Color.white)
         }
     }
 }

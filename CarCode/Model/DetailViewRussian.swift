@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-// array Russia
+// array Russia...
 let arrayRu = [
     ["Республика Адыгея", "01"],
     ["Республика Башкортостан", "02, 102, 702"],
@@ -100,35 +100,47 @@ let arrayRu = [
 // structure view Russian...
 struct DetailRussianView: View {
     
+    // text filter...
     @State private var textSearch = ""
     
     var body: some View {
         VStack {
-            TextField("Enter code or region", text: $textSearch)
+            TextField("Enter code or name", text: $textSearch)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
             Spacer()
             List {
-                ForEach(arrayRu, id: \.self) { indexRow in
-                    HStack{
-                        Text(indexRow[0])
-                            .bold()
-                            .foregroundColor(Color.black)
-                            .multilineTextAlignment(.leading)
-                        Text(indexRow[1])
-                            .foregroundColor(Color(#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)))
-                            .multilineTextAlignment(.leading)
+                if !self.textSearch.isEmpty {
+                    ForEach(arrayRu.filter { $0[0].contains(textSearch) || $0[1].contains(textSearch)}, id: \.self) { indexRow in
+                        HStack{
+                            Text(indexRow[0])
+                                .bold()
+                                .foregroundColor(Color.black)
+                                .multilineTextAlignment(.leading)
+                            Text(indexRow[1])
+                                .foregroundColor(Color(#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)))
+                                .multilineTextAlignment(.leading)
+                        }
+                    }
+                } else {
+                    ForEach(arrayRu, id: \.self) { indexRow in
+                        HStack{
+                            Text(indexRow[0])
+                                .bold()
+                                .foregroundColor(Color.black)
+                                .multilineTextAlignment(.leading)
+                            Text(indexRow[1])
+                                .foregroundColor(Color(#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)))
+                                .multilineTextAlignment(.leading)
+                        }
                     }
                 }
-                .navigationBarTitle("Russian", displayMode: .large)
-                
-                .listRowBackground(Color.white)
             }
+            .navigationBarTitle("Russian", displayMode: .large)
+            .listRowBackground(Color.white)
         }
     }
 }
-
-
 
 struct DetailViewRussian_Previews: PreviewProvider {
     static var previews: some View {

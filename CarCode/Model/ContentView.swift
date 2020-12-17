@@ -55,6 +55,13 @@ struct NavView: View {
                                         .padding(.bottom, 20)
                                    })
                     NavigationLink(destination:
+                                    DetailViewUkraine(),
+                                   label: {
+                                    Text("Ukraine")
+                                        .font(.system(size: 24))
+                                        .padding(.bottom, 20)
+                                   })
+                    NavigationLink(destination:
                                     DetailKazakhstanView(),
                                    label: {
                                     Text("Kazakhstan")
@@ -67,9 +74,7 @@ struct NavView: View {
                                                     Button(action: {self.showAlert = true},
                                                            label: {
                                                             Image(systemName: "info.circle")
-                                                                .font(.system(size: 20))
-                                                                .padding()
-                                    
+                                                                .font(.system(size: 24))
                                                            }
                                                     )
                                                     .alert(isPresented: $showAlert, content: {
@@ -86,8 +91,6 @@ struct NavView: View {
         }
     }
 }
-
-
 
 
 
