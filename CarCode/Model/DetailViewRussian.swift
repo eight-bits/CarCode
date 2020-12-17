@@ -120,7 +120,7 @@ struct DetailRussianView: View {
                             .multilineTextAlignment(.leading)
                     }
                 }
-                .navigationBarTitle("Russian", displayMode: .inline)
+                .navigationBarTitle("Russian", displayMode: .large)
                 
                 .listRowBackground(Color.white)
             }

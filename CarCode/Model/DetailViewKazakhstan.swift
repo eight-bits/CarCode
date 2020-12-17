@@ -50,7 +50,7 @@ struct DetailKazakhstanView: View {
                             .multilineTextAlignment(.leading)
                     }
                 }
-                .navigationBarTitle("Kazakhstan", displayMode: .inline)
+                .navigationBarTitle("Kazakhstan", displayMode: .large)
                 
                 .listRowBackground(Color.white)
             }

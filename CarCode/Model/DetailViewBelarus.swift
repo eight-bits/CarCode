@@ -43,7 +43,7 @@ struct DetailBelarusView: View {
                             .multilineTextAlignment(.leading)
                     }
                 }
-                .navigationBarTitle("Belarus", displayMode: .inline)
+                .navigationBarTitle("Belarus", displayMode: .large)
                 
                 .listRowBackground(Color.white)
             }

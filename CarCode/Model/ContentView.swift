@@ -18,7 +18,10 @@ struct ContentView: View {
 // Structure first view...
 struct NavView: View {
     
-// change color font NavigationBar...
+    // status show alert...
+    @State private var showAlert = false
+    
+    // change color font NavigationBar...
     init() {
         
         // change is with .large
@@ -41,7 +44,7 @@ struct NavView: View {
                                    label: {
                                     Text("Russian")
                                         .font(.system(size: 24))
-                                        .padding(.bottom, 30)
+                                        .padding(.bottom, 20)
                                         .padding(.top, 100)
                                    })
                     NavigationLink(destination:
@@ -49,24 +52,31 @@ struct NavView: View {
                                    label: {
                                     Text("Belarus")
                                         .font(.system(size: 24))
-                                        .padding(.bottom, 30)
+                                        .padding(.bottom, 20)
                                    })
                     NavigationLink(destination:
                                     DetailKazakhstanView(),
                                    label: {
                                     Text("Kazakhstan")
                                         .font(.system(size: 24))
-                                        .padding(.bottom, 30)
+                                        .padding(.bottom, 20)
                                    })
                         .navigationBarTitle("CarCode")
                         .navigationBarItems(trailing:
                                                 HStack{
-                                                    Button(action: {
-                                                        print("press info")
-                                                    }, label: {
-                                                        Image(systemName: "info.circle")
+                                                    Button(action: {self.showAlert = true},
+                                                           label: {
+                                                            Image(systemName: "info.circle")
+                                                                .font(.system(size: 20))
+                                                                .padding()
+                                    
+                                                           }
+                                                    )
+                                                    .alert(isPresented: $showAlert, content: {
+                                                        Alert(title: Text("About"), message: Text("CarCode - Version 2.0.0\nXcode - Version 12.3 (12C33)\nSwift - 5.3\nFramework - SwiftUI\nCopyright © 2020 Andrey Kudryavtsev"), dismissButton: .default(Text("Ok")))
                                                     })
-                                                })
+                                                }
+                        )
                     Spacer()
                     Text("Copyright © 2020")
                         .font(.system(size: 12))
