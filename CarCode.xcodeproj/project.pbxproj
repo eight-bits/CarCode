@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		55D4E73B258A1FF50013F05B /* DetailViewRussian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D4E73A258A1FF50013F05B /* DetailViewRussian.swift */; };
+		55D4E73E258A20A30013F05B /* DetailViewBelarus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D4E73D258A20A30013F05B /* DetailViewBelarus.swift */; };
+		55D4E741258A20ED0013F05B /* DetailViewKazakhstan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D4E740258A20ED0013F05B /* DetailViewKazakhstan.swift */; };
 		55D6F8D52588A68600261295 /* CarCodeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D6F8D42588A68600261295 /* CarCodeApp.swift */; };
 		55D6F8D72588A68600261295 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D6F8D62588A68600261295 /* ContentView.swift */; };
 		55D6F8D92588A68900261295 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55D6F8D82588A68900261295 /* Assets.xcassets */; };
@@ -14,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		55D4E73A258A1FF50013F05B /* DetailViewRussian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewRussian.swift; sourceTree = "<group>"; };
+		55D4E73D258A20A30013F05B /* DetailViewBelarus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewBelarus.swift; sourceTree = "<group>"; };
+		55D4E740258A20ED0013F05B /* DetailViewKazakhstan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewKazakhstan.swift; sourceTree = "<group>"; };
 		55D6F8D12588A68600261295 /* CarCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55D6F8D42588A68600261295 /* CarCodeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarCodeApp.swift; sourceTree = "<group>"; };
 		55D6F8D62588A68600261295 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -33,6 +39,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		55D4E738258A1F7A0013F05B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				55D6F8D42588A68600261295 /* CarCodeApp.swift */,
+				55D6F8D62588A68600261295 /* ContentView.swift */,
+				55D4E73D258A20A30013F05B /* DetailViewBelarus.swift */,
+				55D4E740258A20ED0013F05B /* DetailViewKazakhstan.swift */,
+				55D4E73A258A1FF50013F05B /* DetailViewRussian.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		55D6F8C82588A68600261295 = {
 			isa = PBXGroup;
 			children = (
@@ -52,8 +70,7 @@
 		55D6F8D32588A68600261295 /* CarCode */ = {
 			isa = PBXGroup;
 			children = (
-				55D6F8D42588A68600261295 /* CarCodeApp.swift */,
-				55D6F8D62588A68600261295 /* ContentView.swift */,
+				55D4E738258A1F7A0013F05B /* Model */,
 				55D6F8D82588A68900261295 /* Assets.xcassets */,
 				55D6F8DD2588A68900261295 /* Info.plist */,
 				55D6F8DA2588A68900261295 /* Preview Content */,
@@ -138,7 +155,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55D4E741258A20ED0013F05B /* DetailViewKazakhstan.swift in Sources */,
 				55D6F8D72588A68600261295 /* ContentView.swift in Sources */,
+				55D4E73B258A1FF50013F05B /* DetailViewRussian.swift in Sources */,
+				55D4E73E258A20A30013F05B /* DetailViewBelarus.swift in Sources */,
 				55D6F8D52588A68600261295 /* CarCodeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
