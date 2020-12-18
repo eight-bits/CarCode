@@ -24,12 +24,13 @@ struct NavView: View {
     // change color font NavigationBar...
     init() {
         
-        // change is with .large
+        // change is with .large...
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.orange]
         
-        //change is with .inline
+        // change is with .inline...
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
         
+        // change background color navigationbar onli type .inline...
         UINavigationBar.appearance().barTintColor = .orange
         
     

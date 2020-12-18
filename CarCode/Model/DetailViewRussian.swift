@@ -112,10 +112,9 @@ struct DetailRussianView: View {
             List {
                 if !self.textSearch.isEmpty {
                     ForEach(arrayRu.filter { $0[0].contains(textSearch) || $0[1].contains(textSearch)}, id: \.self) { indexRow in
-                        HStack{
+                        VStack(alignment: .leading){
                             Text(indexRow[0])
                                 .bold()
-                                .foregroundColor(Color.black)
                                 .multilineTextAlignment(.leading)
                             Text(indexRow[1])
                                 .foregroundColor(Color(#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)))
@@ -124,10 +123,9 @@ struct DetailRussianView: View {
                     }
                 } else {
                     ForEach(arrayRu, id: \.self) { indexRow in
-                        HStack{
+                        VStack(alignment: .leading){
                             Text(indexRow[0])
                                 .bold()
-                                .foregroundColor(Color.black)
                                 .multilineTextAlignment(.leading)
                             Text(indexRow[1])
                                 .foregroundColor(Color(#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)))
@@ -137,7 +135,6 @@ struct DetailRussianView: View {
                 }
             }
             .navigationBarTitle("Russian", displayMode: .large)
-            .listRowBackground(Color.white)
         }
     }
 }
