@@ -39,13 +39,17 @@ struct NavView: View {
         VStack {
             NavigationView{
                 VStack {
+                    Image("flags")
+                        .clipShape(Circle())
+                        .padding(.top, 20)
+                        .shadow(radius: 5.5)
                     NavigationLink(destination:
                                     DetailRussianView(),
                                    label: {
                                     Text("Russian")
                                         .font(.system(size: 24))
                                         .padding(.bottom, 20)
-                                        .padding(.top, 100)
+                                        .padding(.top, 20)
                                    })
                     NavigationLink(destination:
                                     DetailBelarusView(),
