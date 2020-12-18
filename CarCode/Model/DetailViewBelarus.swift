@@ -8,7 +8,7 @@
 import SwiftUI
 
 // array Belarus...
-let arrayBy = [
+private let arrayBy = [
     ["Вооружённые Силы", "0"],
     ["Брестская область", "1"],
     ["Витебская область", "2"],

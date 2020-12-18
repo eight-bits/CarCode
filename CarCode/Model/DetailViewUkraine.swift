@@ -9,7 +9,7 @@ import SwiftUI
 
 
 // array Ukraine...
-let arrayUk = [
+private let arrayUk = [
     ["Киев", "11 - AA, KA"],
     ["Киевская область", "10 - AI, KI"],
     ["Винницкая область", "02 - AB, KB"],
