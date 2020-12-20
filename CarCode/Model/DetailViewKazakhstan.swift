@@ -41,7 +41,7 @@ struct DetailKazakhstanView: View {
             Spacer()
             List {
                 if !self.textSearch.isEmpty {
-                    ForEach(arrayKz.filter { $0[0].contains(textSearch) || $0[1].contains(textSearch)}, id: \.self) { indexRow in
+                    ForEach(arrayKz.filter { $0[0].localizedLowercase.contains(textSearch.localizedLowercase) || $0[1].contains(textSearch)}, id: \.self) { indexRow in
                         VStack(alignment: .leading){
                             Text(indexRow[0])
                                 .bold()

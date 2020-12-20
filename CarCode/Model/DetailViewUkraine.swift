@@ -50,7 +50,7 @@ struct DetailViewUkraine: View {
                 .padding()
             List {
                 if !self.textSearch.isEmpty {
-                    ForEach(arrayUk.filter { $0[0].contains(textSearch) || $0[1].contains(textSearch)}, id: \.self) { indexRow in
+                    ForEach(arrayUk.filter { $0[0].localizedLowercase.contains(textSearch.localizedLowercase) || $0[1].localizedLowercase.contains(textSearch.localizedLowercase)}, id: \.self) { indexRow in
                         VStack(alignment: .leading){
                             Text(indexRow[0])
                                 .bold()
