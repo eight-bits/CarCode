@@ -90,21 +90,12 @@ struct NavView: View {
                             }
                         ),
                         trailing:(
-                            VStack {
-                            Button(action: {
-                                print(self.progSettings.themes)
-                                print(self.progSettings.typeTable)
-                                
-                            }, label: {
-                                Text("12")
-                            })
                             Button(action: {self.showAlert = true},
                                    label: {
                                     Image(systemName: "info.circle")
                                         .font(.system(size: 24))
                                    }
                             )
-                            }
                             .alert(isPresented: $showAlert, content: {
                                 Alert(title: Text("About"), message: Text("CarCode - Version 2.0.0\nXcode - Version 12.3 (12C33)\nSwift - 5.3\nFramework - SwiftUI\nCopyright © 2020 Andrey Kudryavtsev"), dismissButton: .default(Text("Ok")))
                             })

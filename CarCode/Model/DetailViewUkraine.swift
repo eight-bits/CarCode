@@ -51,6 +51,7 @@ struct DetailViewUkraine: View {
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
             if self.progSettings.typeTable == 1 {
+            // view one table line...
             List {
                 if !self.textSearch.isEmpty {
                     ForEach(arrayUk.filter { $0[0].localizedLowercase.contains(textSearch.localizedLowercase) || $0[1].localizedLowercase.contains(textSearch.localizedLowercase)}, id: \.self) { indexRow in
@@ -77,7 +78,7 @@ struct DetailViewUkraine: View {
                 }
             }
             .navigationBarTitle("Ukraine", displayMode: .large)
-            // view two line...
+            // view two table line...
             } else {
                 List {
                     if !self.textSearch.isEmpty {

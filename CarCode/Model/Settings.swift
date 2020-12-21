@@ -49,14 +49,14 @@ struct Param: View {
                             }
                         }
                         .pickerStyle(SegmentedPickerStyle())
+                    Text("Program restart required")
+                        .font(.system(size: 14))
                     }
                 }
                 Section(header: Text("Apply settings")) {
                     Button(action: {
                         UserDefaults.standard.set(self.progSettings.themes, forKey: "theme")
                         UserDefaults.standard.set(self.progSettings.typeTable, forKey: "typeTable")
-                        print(self.progSettings.themes)
-                        print(self.progSettings.typeTable)
                         UIApplication.shared.windows.first?.rootViewController?.overrideUserInterfaceStyle = self.progSettings.themes ? .dark : .light
                     }, label:{
                     Text("Save")
