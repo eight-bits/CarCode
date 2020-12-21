@@ -35,6 +35,7 @@ struct NavView: View {
         // change background color navigationbar onli type .inline...
         UINavigationBar.appearance().barTintColor = .orange
         
+        // set theme
         UIApplication.shared.windows.first?.rootViewController?.overrideUserInterfaceStyle = self.progSettings.themes ? .dark : .light
     }
     
