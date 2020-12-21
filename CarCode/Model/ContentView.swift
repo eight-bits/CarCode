@@ -21,9 +21,11 @@ struct NavView: View {
     // status show alert...
     @State private var showAlert = false
     
+    // status show settings
+    @State private var showSettings = false
+    
     // change color font NavigationBar...
     init() {
-        
         // change is with .large...
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.orange]
         
@@ -33,8 +35,10 @@ struct NavView: View {
         // change background color navigationbar onli type .inline...
         UINavigationBar.appearance().barTintColor = .orange
         
+        UIApplication.shared.windows.first?.rootViewController?.overrideUserInterfaceStyle = self.progSettings.themes ? .dark : .light
+    }
     
-            }
+    @ObservedObject var progSettings = MySettings()
     
     var body: some View {
         VStack {
@@ -75,23 +79,41 @@ struct NavView: View {
                                         .padding(.bottom, 20)
                                    })
                         .navigationBarTitle("CarCode")
-                        .navigationBarItems(trailing:
-                                                HStack{
-                                                    Button(action: {self.showAlert = true},
-                                                           label: {
-                                                            Image(systemName: "info.circle")
-                                                                .font(.system(size: 24))
-                                                           }
-                                                    )
-                                                    .alert(isPresented: $showAlert, content: {
-                                                        Alert(title: Text("About"), message: Text("CarCode - Version 2.0.0\nXcode - Version 12.3 (12C33)\nSwift - 5.3\nFramework - SwiftUI\nCopyright © 2020 Andrey Kudryavtsev"), dismissButton: .default(Text("Ok")))
-                                                    })
-                                                }
+                        .navigationBarItems(leading:(
+                            Button(action: {
+                                self.showSettings.toggle()
+                            }, label: {
+                                Image(systemName: "gearshape")
+                                    .font(.system(size: 24))
+                            }).sheet(isPresented: $showSettings) {
+                                Settings()
+                            }
+                        ),
+                        trailing:(
+                            VStack {
+                            Button(action: {
+                                print(self.progSettings.themes)
+                                print(self.progSettings.typeTable)
+                                
+                            }, label: {
+                                Text("12")
+                            })
+                            Button(action: {self.showAlert = true},
+                                   label: {
+                                    Image(systemName: "info.circle")
+                                        .font(.system(size: 24))
+                                   }
+                            )
+                            }
+                            .alert(isPresented: $showAlert, content: {
+                                Alert(title: Text("About"), message: Text("CarCode - Version 2.0.0\nXcode - Version 12.3 (12C33)\nSwift - 5.3\nFramework - SwiftUI\nCopyright © 2020 Andrey Kudryavtsev"), dismissButton: .default(Text("Ok")))
+                            })
+                        )
                         )
                     Spacer()
-                    Text("Copyright © 2020")
-                        .font(.system(size: 12))
-                        .foregroundColor(Color(#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)))
+                            Text("Copyright © 2020")
+                                .font(.system(size: 12))
+                                .foregroundColor(Color(#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)))
                 }
             }
         }

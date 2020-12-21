@@ -43,11 +43,14 @@ struct DetailViewUkraine: View {
     // text filter...
     @State private var textSearch = ""
     
+    @ObservedObject var progSettings = MySettings()
+    
     var body: some View {
         VStack {
             TextField("Enter code or name or region", text:$textSearch)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
+            if self.progSettings.typeTable == 1 {
             List {
                 if !self.textSearch.isEmpty {
                     ForEach(arrayUk.filter { $0[0].localizedLowercase.contains(textSearch.localizedLowercase) || $0[1].localizedLowercase.contains(textSearch.localizedLowercase)}, id: \.self) { indexRow in
@@ -74,6 +77,35 @@ struct DetailViewUkraine: View {
                 }
             }
             .navigationBarTitle("Ukraine", displayMode: .large)
+            // view two line...
+            } else {
+                List {
+                    if !self.textSearch.isEmpty {
+                        ForEach(arrayUk.filter { $0[0].localizedLowercase.contains(textSearch.localizedLowercase) || $0[1].localizedLowercase.contains(textSearch.localizedLowercase)}, id: \.self) { indexRow in
+                            HStack{
+                                Text(indexRow[0])
+                                    .bold()
+                                    .multilineTextAlignment(.leading)
+                                Text(indexRow[1])
+                                    .foregroundColor(Color(#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)))
+                                    .multilineTextAlignment(.leading)
+                            }
+                        }
+                    } else {
+                        ForEach(arrayUk, id: \.self) { indexRow in
+                            HStack{
+                                Text(indexRow[0])
+                                    .bold()
+                                    .multilineTextAlignment(.leading)
+                                Text(indexRow[1])
+                                    .foregroundColor(Color(#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)))
+                                    .multilineTextAlignment(.leading)
+                            }
+                        }
+                    }
+                }
+                .navigationBarTitle("Ukraine", displayMode: .large)
+            }
         }
     }
 }
