@@ -18,10 +18,8 @@ class MySettings: ObservableObject {
 
 struct Param: View {
     
-    // array themes items
-    let arrayTheme = ["Light", "Dark"]
     // array typeTable
-    let arrayTypeTable = ["In one line", "In two lines"]
+    let arrayTypeTable = [LocalizedStringKey("In one line"), LocalizedStringKey("In two lines")]
         
     @ObservedObject var progSettings = MySettings()
     

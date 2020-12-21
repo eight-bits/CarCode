@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  CarCode
+
+  Created by Andrey Kudryavtsev on 21.12.2020.
+  
+*/
+"Russia" = "Россия";
+"Belarus" = "Беларусь";
+"Ukraine" = "Украина";
+"Kazakhstan" = "Казахстан";
+"Enter code or name" = "Введите код или город";
+"Enter code or name or region" = "Введите код или город или регион";
+"Settings" = "Настройки";
+"Choose a theme" = "Выберите тему";
+"Dark Mode" = "Темная тема";
+"Kind of table" = "Стиль таблицы";
+"In one line" = "В одну линию";
+"In two lines" = "В две линии";
+"Program restart required" = "Потребуется перезапуск программы";
+"Apply settings" = "Применить настройки";
+"Save" = "Сохранить";
+
