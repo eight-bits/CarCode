@@ -44,10 +44,10 @@ struct NavView: View {
         coloredAppearance.backgroundColor = .purple
         coloredAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
         coloredAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        
         UINavigationBar.appearance().standardAppearance = coloredAppearance
         UINavigationBar.appearance().compactAppearance = coloredAppearance
         UINavigationBar.appearance().scrollEdgeAppearance = coloredAppearance
-
     }
     
     var body: some View {
@@ -94,6 +94,7 @@ struct NavView: View {
                                 Text("Dark theme")
                                     .foregroundColor(Color.white)
                             })
+                            .toggleStyle(SwitchToggleStyle(tint: .yellow))
                         ),
                         trailing:(
                             Button(action: {self.showAlert = true},
