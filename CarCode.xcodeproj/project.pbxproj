@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		555CD232258F9DEC00E7CF16 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555CD231258F9DEC00E7CF16 /* Settings.swift */; };
 		555CD245259112A800E7CF16 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 555CD247259112A800E7CF16 /* Localizable.strings */; };
 		55620452258BC3FB003E5958 /* DetailViewUkraine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55620451258BC3FB003E5958 /* DetailViewUkraine.swift */; };
 		55D4E73B258A1FF50013F05B /* DetailViewRussian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D4E73A258A1FF50013F05B /* DetailViewRussian.swift */; };
@@ -20,7 +19,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		555CD231258F9DEC00E7CF16 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		555CD246259112A800E7CF16 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		555CD24A2591134700E7CF16 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		55620451258BC3FB003E5958 /* DetailViewUkraine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewUkraine.swift; sourceTree = "<group>"; };
@@ -51,7 +49,6 @@
 			children = (
 				55D6F8D42588A68600261295 /* CarCodeApp.swift */,
 				55D6F8D62588A68600261295 /* ContentView.swift */,
-				555CD231258F9DEC00E7CF16 /* Settings.swift */,
 				55D4E73D258A20A30013F05B /* DetailViewBelarus.swift */,
 				55D4E740258A20ED0013F05B /* DetailViewKazakhstan.swift */,
 				55D4E73A258A1FF50013F05B /* DetailViewRussian.swift */,
@@ -171,7 +168,6 @@
 				55620452258BC3FB003E5958 /* DetailViewUkraine.swift in Sources */,
 				55D6F8D72588A68600261295 /* ContentView.swift in Sources */,
 				55D4E73B258A1FF50013F05B /* DetailViewRussian.swift in Sources */,
-				555CD232258F9DEC00E7CF16 /* Settings.swift in Sources */,
 				55D4E73E258A20A30013F05B /* DetailViewBelarus.swift in Sources */,
 				55D6F8D52588A68600261295 /* CarCodeApp.swift in Sources */,
 			);

@@ -24,23 +24,31 @@ struct NavView: View {
     // status show settings
     @State private var showSettings = false
     
+    @State private var showDark = false
+    
     // change color font NavigationBar...
     init() {
         // change is with .large...
-        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.orange]
+        //UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.orange]
         // change is with .inline...
-        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
+        //UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
         
         // change background color navigationbar type .inline...
-        UINavigationBar.appearance().barTintColor = .orange
+        //UINavigationBar.appearance().barTintColor = .orange
         // change background color navigationbar type .large...
         //UINavigationBar.appearance().backgroundColor = .white
         
-        // set theme
-        UIApplication.shared.windows.first?.rootViewController?.overrideUserInterfaceStyle = self.progSettings.themes ? .dark : .light
+        UINavigationBar.appearance().tintColor = .white
+        //UINavigationBar.appearance()
+        let coloredAppearance = UINavigationBarAppearance()
+        coloredAppearance.backgroundColor = .purple
+        coloredAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        coloredAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().standardAppearance = coloredAppearance
+        UINavigationBar.appearance().compactAppearance = coloredAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = coloredAppearance
+
     }
-    
-    @ObservedObject var progSettings = MySettings()
     
     var body: some View {
         VStack {
@@ -82,14 +90,10 @@ struct NavView: View {
                                    })
                         .navigationBarTitle("CarCode")
                         .navigationBarItems(leading:(
-                            Button(action: {
-                                self.showSettings.toggle()
-                            }, label: {
-                                Image(systemName: "gearshape")
-                                    .font(.system(size: 24))
-                            }).sheet(isPresented: $showSettings) {
-                                Settings()
-                            }
+                            Toggle(isOn: $showDark, label: {
+                                Text("Dark theme")
+                                    .foregroundColor(Color.white)
+                            })
                         ),
                         trailing:(
                             Button(action: {self.showAlert = true},
@@ -99,23 +103,20 @@ struct NavView: View {
                                    }
                             )
                             .alert(isPresented: $showAlert, content: {
-                                Alert(title: Text("About"), message: Text("CarCode - Version 2.0.0\nXcode - Version 12.3 (12C33)\nSwift - 5.3\nFramework - SwiftUI\nCopyright © 2020 Andrey Kudryavtsev"), dismissButton: .default(Text("Ok")))
+                                Alert(title: Text("About"), message: Text("CarCode - Version 2.0.0\nXcode - Version 12.5.1 (12E507)\nSwift - 5.3\nFramework - SwiftUI\nCopyright © 2021 Andrey Kudryavtsev"), dismissButton: .default(Text("Ok")))
                             })
                         )
                         )
                     Spacer()
-                            Text("Copyright © 2020")
-                                .font(.system(size: 12))
-                                .foregroundColor(Color(#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)))
+                    Text("Copyright © 2021")
+                        .font(.system(size: 12))
+                        .foregroundColor(Color(#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)))
                 }
             }
         }
+        .colorScheme(showDark ? .dark : .light)
     }
 }
-
-
-
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
